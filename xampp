@@ -1,0 +1,25 @@
+# http
+ <VirtualHost 127.0.0.2:80>
+     DocumentRoot "D:/XAMPP/htdocs/jwt-auth-socialite/public"
+     DirectoryIndex index.php
+
+     <Directory "D:/XAMPP/htdocs/jwt-auth-socialite/public">
+         Options All
+     	AllowOverride All
+    	Require all granted
+    </Directory>
+ </VirtualHost>
+
+# https
+<VirtualHost 127.0.0.2:443>
+    DocumentRoot "D:/XAMPP/htdocs/jwt-auth-socialite/public"
+    ServerName jwt-auth-socialite.com
+    SSLEngine on
+    SSLCertificateFile "conf/ssl.crt/server.crt"
+    SSLCertificateKeyFile "conf/ssl.key/server.key"
+    <Directory "D:/XAMPP/htdocs/jwt-auth-socialite/public">
+        Options All
+    	AllowOverride All
+    	Require all granted
+    </Directory>
+</VirtualHost>
